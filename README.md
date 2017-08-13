@@ -1,8 +1,5 @@
 # **Traffic Sign Recognition** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
@@ -25,6 +22,11 @@ The goals / steps of this project are the following:
 [vis-image4]: ./pictures/valid_distribution.png "validation data distribution"
 [vis-image5]: ./pictures/testing_data.png "testing data bar chart"
 [vis-image6]: ./pictures/testing_distribution.png "testing data distribution"
+
+[orig-image1]: ./pictures/gray-30-kmh-1.png "orig-30-kmh-1.png"
+
+[gray-image1]: ./pictures/gray-30-kmh-1.png "gray-30-kmh-1.png"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -65,23 +67,13 @@ And the distributions are all right skewed.
 
 #### 1. Preprocessing: ( Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.) )
 
-As a first step, I decided to convert the images to grayscale because ...
+As first I tried to train the original LeNet-5 model with original images and the accuracy is about 70% which is way below the 93% threshold. So I read the forum to learn how to do preprocessing of grayscale and normalization.  
 
-Here is an example of a traffic sign image before and after grayscaling.
+I normalized the image data because I tried to compare with the trained model validation accuracy and normalization really helped.
 
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+Here is an example of a traffic sign image before and after grayscaling and normalization.
+![alt text][[orig-image1]]
+![alt text][[gray-image1]]
 
 
 #### 2. Model Architecture:  ( Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model. )
