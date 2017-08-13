@@ -1,3 +1,11 @@
+EPOCH 50 ...
+Train set Accuracy = 1.000
+Validation Accuracy = 0.978
+Test Accuracy = 0.966
+
+Model saved
+time elapsed: 1092.0374250411987
+
 ClassId	SignName
 0	Speed limit (20km/h)
 1	Speed limit (30km/h)
@@ -46,7 +54,8 @@ ClassId	SignName
 
 
 
-svg png set:
+svg png set: \pictures\german-traffic-signs\svg
+
 22	Bumpy road
 ./pictures/german-traffic-signs/svg\Bumpy road.svg.png
 28	Children crossing
@@ -62,7 +71,7 @@ svg png set:
 
 
 
-jpg set:
+jpg set: \pictures\german-traffic-signs\jpg
 
 1	Speed limit (30km/h)
 22	Bumpy road

@@ -26,6 +26,19 @@ The goals / steps of this project are the following:
 [orig-image1]: ./pictures/orig-30-kmh-1.png "orig-30-kmh-1.png"
 [gray-image1]: ./pictures/gray-30-kmh-1.png "gray-30-kmh-1.png"
 
+[german-1]: ./pictures/german-traffic-signs/jpg/30.jpg "30.jpg"
+[german-2]: ./pictures/german-traffic-signs/jpg/bumpy-road-1.jpg "bumpy-road-1.jpg"
+[german-3]: ./pictures/german-traffic-signs/jpg/bumpy-road-2.jpg "bumpy-road-2.jpg"
+[german-4]: ./pictures/german-traffic-signs/jpg/bumpy-road-3.jpg "bumpy-road-3.jpg"
+[german-5]: ./pictures/german-traffic-signs/jpg/General-caution-1.jpg "Generalcaution-1"
+[german-6]: ./pictures/german-traffic-signs/jpg/no-entry-1.jpg "no entry-1"
+[german-7]: ./pictures/german-traffic-signs/jpg/priority-road.jpg "priority road"
+[german-8]: ./pictures/german-traffic-signs/jpg/Right-of-way-next-intersection-1.jpg "Right-of-way at the next intersection-1"
+[german-9]: ./pictures/german-traffic-signs/jpg/Right-of-way-next-intersection-2.jpg "Right-of-way at the next intersection-2"
+[german-10]: ./pictures/german-traffic-signs/jpg/stop-1.jpg "stop-1"
+[german-11]: ./pictures/german-traffic-signs/jpg/stop-2.jpg "stop-2"
+
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -115,15 +128,15 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-** Ans: I used the LeNet-5 architecture as the first architecture to test the effect of preprocessing with grayscale and normalization. I choose it simply because I don't know anything else.
+Ans: I used the LeNet-5 architecture as the first architecture to test the effect of preprocessing with grayscale and normalization. I choose it simply because I don't know anything else.
 
 * What were some problems with the initial architecture?
-** Ans: The problem is it's accuracy is too low, at 70%.
+Ans: The problem is it's accuracy is too low, at 70%.
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-** Ans: (Trying to answer above 3 questions) I tried to add a convolution layer but it doesn't help. 
+Ans: (Trying to answer above 3 questions) I tried to add a convolution layer but it doesn't help. 
 And I tried to adjust filter width, height, depth, and found out bigger filter depth seem to help. I imagine that with increased filter depth, more details of different image characteristics could be stores in the network. 
 I couldn't really grasp the idea of dropouts but it was mentioned in the class video and forum, so I added it, and it really pushed accuracy up about more that 1%.
 
@@ -139,27 +152,36 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+I download 11 German traffic signs .jpg files, here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
-
-The first image might be difficult to classify because ...
+1. ![alt text][german-1] 
+2. ![alt text][german-2] 
+3. ![alt text][german-3]
+4. ![alt text][german-4]
+5. ![alt text][german-5]
+6. ![alt text][german-6]
+7. ![alt text][german-7]
+8. ![alt text][german-8]
+9. ![alt text][german-9]
+10. ![alt text][german-10]
+11. ![alt text][german-11]
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-Here are the results of the prediction:
+Here are the first 5 results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Road work      		| Speed limit (30km/h)							| 
+| Bumpy road    		| Bumpy road									|
+| Wild animals crossing	| Bumpy road									|
+| Bumpy road      		| Bumpy Road					 				|
+| General caution		| General caution      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 8 of the 11 traffic signs, which gives an accuracy of 72%, which is lower than the accuray on the test.
+
+The prediction of No.1, No.3, and No.11 is wrong probably because of too much noise in the background. I should try to crop these 3 images and predict again. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
