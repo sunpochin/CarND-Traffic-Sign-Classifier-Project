@@ -152,7 +152,7 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-I download 11 German traffic signs .jpg files, here are five German traffic signs that I found on the web:
+I download 11 German traffic sign .jpg files:
 
 1. ![alt text][german-1] 
 2. ![alt text][german-2] 
@@ -172,9 +172,9 @@ Here are the first 5 results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Road work      		| Speed limit (30km/h)							| 
+| Speed limit (30km/h)	| Road work      								| 
 | Bumpy road    		| Bumpy road									|
-| Wild animals crossing	| Bumpy road									|
+| Bumpy road			| Wild animals crossing							|
 | Bumpy road      		| Bumpy Road					 				|
 | General caution		| General caution      							|
 
@@ -185,21 +185,32 @@ The prediction of No.1, No.3, and No.11 is wrong probably because of too much no
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is nearly 100% sure that this is a No.25 Road work but it's wrong, it's a Speed limit (30km/h). The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+|:---------------------:|:---------------------------------------------:|
+| 1.0		      		| 25	Road work		 						| 
+| 0			    		| 31	Wild animals crossing					|
+| 0						| 10	No passing for vehicles over 3.5 metric tons|
+| 0			      		| 23	Slippery road			 				|
+| 0						| 30	Beware of ice/snow						|
 
 
-For the second image ... 
 
+For the second image the model is nearly 100% sure it's a Bumpy road and it's right this time:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:|
+| 1.0		      		| 22	Bumpy road		 						| 
+| 0			    		| 29	Bicycles crossing						|
+| 0						| 31	Wild animals crossing					|
+| 0			      		| 26	Traffic signals			 				|
+| 0						| 0	Speed limit (20km/h)						|
+
+
+
+ [22, 29, 31, 26,  0],
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
