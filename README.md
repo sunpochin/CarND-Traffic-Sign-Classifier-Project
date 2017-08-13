@@ -23,8 +23,7 @@ The goals / steps of this project are the following:
 [vis-image5]: ./pictures/testing_data.png "testing data bar chart"
 [vis-image6]: ./pictures/testing_distribution.png "testing data distribution"
 
-[orig-image1]: ./pictures/gray-30-kmh-1.png "orig-30-kmh-1.png"
-
+[orig-image1]: ./pictures/orig-30-kmh-1.png "orig-30-kmh-1.png"
 [gray-image1]: ./pictures/gray-30-kmh-1.png "gray-30-kmh-1.png"
 
 
@@ -65,18 +64,19 @@ And the distributions are all right skewed.
 
 ### Design and Test a Model Architecture
 
-#### 1. Preprocessing: ( Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.) )
+#### 1. Preprocessing:
 
 As first I tried to train the original LeNet-5 model with original images and the accuracy is about 70% which is way below the 93% threshold. So I read the forum to learn how to do preprocessing of grayscale and normalization.  
 
 I normalized the image data because I tried to compare with the trained model validation accuracy and normalization really helped.
 
 Here is an example of a traffic sign image before and after grayscaling and normalization.
-![alt text][[orig-image1]]
-![alt text][[gray-image1]]
+
+![alt text][orig-image1]
+![alt text][gray-image1]
 
 
-#### 2. Model Architecture:  ( Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model. )
+#### 2. Model Architecture: 
 
 My final model consisted of the following layers:
 
@@ -104,7 +104,7 @@ My final model consisted of the following layers:
 
 To train the model, I used the LeNet-5 model from last lab as a starting point.
 I tried with various filter size for the Convolution Layer, and find out with depth size 32 I have an increased accuray about 93%.
-Then I increased the depth size to 64 to get 95% accuracy, and tried with Dropout to get 1~2% more accuracy.  
+Then I increased the depth size to 64 to get 95% accuracy, and tried with Dropout to get 1% more accuracy.  
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -115,11 +115,20 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+** Ans: I used the LeNet-5 architecture as the first architecture to test the effect of preprocessing with grayscale and normalization. I choose it simply because I don't know anything else.
+
 * What were some problems with the initial architecture?
+** Ans: The problem is it's accuracy is too low, at 70%.
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+** Ans: (Trying to answer above 3 questions) I tried to add a convolution layer but it doesn't help. 
+And I tried to adjust filter width, height, depth, and found out bigger filter depth seem to help. I imagine that with increased filter depth, more details of different image characteristics could be stores in the network. 
+I couldn't really grasp the idea of dropouts but it was mentioned in the class video and forum, so I added it, and it really pushed accuracy up about more that 1%.
 
+
+(skip this question)
 If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
