@@ -46,7 +46,7 @@ The goals / steps of this project are the following:
 ---
 ### Files Submitted
 
-#### 1. This README.md file.
+#### 1. This github project with this README.md file.
 #### 2. The jupyter notebook to run my model: [here](https://github.com/sunpochin/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) .
 
 ### Dataset Exploration
@@ -122,23 +122,29 @@ Then I increased the depth size to 64 to get 95% accuracy, and tried with Dropou
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 1.000
+* validation set accuracy of 0.978
+* test set accuracy of 0.966
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-Ans: I used the LeNet-5 architecture as the first architecture to test the effect of preprocessing with grayscale and normalization. I choose it simply because I don't know anything else.
+
+	Ans: I used the LeNet-5 architecture as the first architecture to test the effect of preprocessing with grayscale and normalization. 
+	I choose it simply because I don't know anything else.
 
 * What were some problems with the initial architecture?
-Ans: The problem is it's accuracy is too low, at 70%.
+
+	Ans: The problem is it's accuracy is too low, at 70%.
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-Ans: (Trying to answer above 3 questions) I tried to add a convolution layer but it doesn't help. 
-And I tried to adjust filter width, height, depth, and found out bigger filter depth seem to help. I imagine that with increased filter depth, more details of different image characteristics could be stores in the network. 
-I couldn't really grasp the idea of dropouts but it was mentioned in the class video and forum, so I added it, and it really pushed accuracy up about more that 1%.
+
+	Ans: (Trying to answer above 3 questions) I tried to add a convolution layer but it doesn't help. 
+
+	And I tried to adjust filter width, height, depth, and found out bigger filter depth seem to help. I imagine that with increased filter depth, more details of different image characteristics could be stores in the network. 
+	
+	I couldn't really grasp the idea of dropouts but it was mentioned in the class video and forum, so I added it, and it really pushed accuracy up about more that 1%.
 
 
 (skip this question)
