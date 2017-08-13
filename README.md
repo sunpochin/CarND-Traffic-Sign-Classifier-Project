@@ -197,7 +197,6 @@ For the first image, the model is nearly 100% sure that this is a No.25 Road wor
 | 0						| 30	Beware of ice/snow						|
 
 
-
 For the second image the model is nearly 100% sure it's a Bumpy road and it's right this time:
 
 | Probability         	|     Prediction	        					| 
@@ -209,8 +208,42 @@ For the second image the model is nearly 100% sure it's a Bumpy road and it's ri
 | 0						| 0	Speed limit (20km/h)						|
 
 
+For the 3rd image the model is 95% sure it's a "Wild animals crossing" but it's wrong again, it's still a "Bumpy road".
 
- [22, 29, 31, 26,  0],
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:|
+| 0.95		      		| 31	Wild animals crossing					| 
+| 0.003		    		| 40	Roundabout mandatory					|
+| 0.001					| 18	General caution							|
+| 0.0002	      		| 37	Go straight or left						|
+| 0.00001				| 17	No entry								|
+
+
+For the 4th image the model got it right at 99%, it's a "Bumpy road".
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:|
+| 0.99		      		| 22	Bumpy road		 						| 
+| 0			    		| 29	Bicycles crossing						|
+| 0						| 31	Wild animals crossing					|
+| 0			      		| 25	Road work		 						|
+| 0						| 23	Slippery road							|
+
+
+5th image the model predict it right at 99%.
+Seems my model is so sure even when it's wrong, all the probability are above 95%.
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:|
+| 0.99		      		| 18	General caution							| 
+| 0			    		| 27	Pedestrians								|
+| 0						| 26	Traffic signals							|
+| 0			      		| 37	Go straight or left		 				|
+| 0						| 40	Roundabout mandatory					|
+
+
+
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
